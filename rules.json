@@ -1,0 +1,62 @@
+{
+  "header": {
+    "columns": {
+      "common": [
+        "current_state",
+        "next_state",
+        "rule_type"
+      ],
+      "rule_type_0_directional": [
+        "left_state",
+        "right_state",
+        "up_state",
+        "down_state"
+      ],
+      "rule_type_1_neighbor_counts": [
+        "minimum_state_0_neighbors",
+        "minimum_state_1_neighbors",
+        "minimum_state_2_neighbors"
+      ]
+    },
+    "states": [0, 1, 2],
+    "configuration": {
+      "dimensions": "Provide the number of rows and columns in the grid",
+      "seed": "Provide a grid of cell states. Its rows and columns must match the given dimensions. Enclose each row in brackets where each list element is a state for a cell, 0, 1, or 2",
+      "rounds": "Provide the number of rounds to run the simulation for before stopping"
+    },
+    "rule_types": {
+      "0": "Directional: list the required left, right, up, and down states to change the state from the first column to the second. Use -1 as a wildcard for any state. (For example, you can do 0, 1, 0, 1, -1, -1, -1 so that a 0 becomes a 1 if the left cell is a 1)",
+      "1": "Neighbor counts: list minimum counts for state 0, state 1, and state 2 among the four directly adjacent cells after the common columns. Use -1 as a wildcard for any number."
+    }
+  },
+  "dimensions": {
+    "rows": 15,
+    "columns": 15
+  },
+  "rounds": 10,
+  "seed": [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 1, 0, 1, 2, 1, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+    [0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  ],
+  "rules": [
+    [0, 1, 1, 0, 0, 2],
+    [0, 2, 1, 0, 3, 0],
+    [1, 0, 1, 0, 0, 1],
+    [1, 2, 1, 1, 1, 0],
+    [2, 0, 1, 0, 0, 2],
+    [2, 1, 1, 2, 2, 2]
+  ]
+}
